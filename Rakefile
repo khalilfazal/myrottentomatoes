@@ -6,6 +6,5 @@ require File.expand_path('../config/application', __FILE__)
 Myrottenpotatoes::Application.load_tasks
 
 task start: :environment do
-    system 'rake db:reset'
     system 'rails server -p 3001'
 end
