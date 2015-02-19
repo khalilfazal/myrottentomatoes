@@ -17,6 +17,3 @@
 
 # Ignore IDE files
 /.idea
-
-# Ignore Gemfile lock
-Gemfile.lock
