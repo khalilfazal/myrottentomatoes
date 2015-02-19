@@ -1,0 +1,29 @@
+-#  This file is app/views/movies/index.html.haml
+%h2 All Movies
+
+%table#movies
+  %thead
+    %tr
+      %th= sortable 'id', '#'
+      %th= sortable 'title', 'Movie Title'
+      %th= sortable 'rating', 'Rating'
+      %th= sortable 'release_date', 'Release Date'
+      %th More Info
+      %th
+    %tbody
+      - @movies.each do |movie|
+        %tr
+          %td= movie.id
+          %td= movie.title
+          %td= movie.rating.label
+          %td= movie.release_date.strftime('%B %d, %Y')
+          %td= link_to 'More Info', movie
+          %td= link_to 'X', movie_path(movie), method: :delete, data: (confirm movie)
+
+= link_to 'Add new movie', new_movie_path
+
+%h2 Search TMDb for a movie
+= form_tag action: 'search_tmdb' do
+  = label :search, :terms, 'Search Terms'
+  = text_field :search, :terms
+  = submit_tag 'Search TMDb'
