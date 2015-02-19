@@ -74,8 +74,9 @@ class MoviesController < ApplicationController
 
   def destroy
     movie = the_movie
+    title = movie.title
     movie.destroy
-    flash[:notice] = "Deleted \"#{get_title}\""
+    flash[:notice] = "Deleted \"#{title}\""
     redirect_to root_path
   end
 
