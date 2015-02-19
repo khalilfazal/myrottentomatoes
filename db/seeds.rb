@@ -14,28 +14,27 @@ g    = Rating.create! label: 'G'
 pg   = Rating.create! label: 'PG'
 pg13 = Rating.create! label: 'PG-13'
 r    = Rating.create! label: 'R'
-nc17 = Rating.create! label: 'NC-17'
+Rating.create! label: 'NC-17'
 
-[{
-  title: 'Aladdin',
+[{title:        'Aladdin',
   rating:       g,
-  release_date: '25-Nov-1992'
-}, {
-  title: 'When Harry Met Sally',
+  release_date: '25-Nov-1992'},
+
+ {title:        'When Harry Met Sally',
   rating:       r,
-  release_date: '21-Jul-1989'
-}, {
-  title: 'The Help',
+  release_date: '21-Jul-1989'},
+
+ {title:        'The Help',
   rating:       pg13,
-  release_date: '10-Aug-2011'
-}, {
-  title: 'Raiders of the Lost Ark',
+  release_date: '10-Aug-2011'},
+
+ {title:        'Raiders of the Lost Ark',
   rating:       pg,
-  release_date: '12-Jun-1981'
-}, {
-  title: 'Inception',
+  release_date: '12-Jun-1981'},
+
+ {title:        'Inception',
   rating:       pg,
-  release_date: '16-July-2010'
-}].each { |params|
+  release_date: '16-July-2010'}]
+.each { |params|
   Movie.create! params
 }

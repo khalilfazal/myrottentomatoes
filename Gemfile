@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
+#gem 'ruby', '2'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem 'rails', '4.0.3'
+gem 'rails', '> 4.0.3'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -30,6 +32,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# The controller-level `respond_to' feature has been extracted to the `responders` gem.
+gem 'responders', '~> 2.0'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -49,6 +54,12 @@ gem 'haml'
 
 # API wrapper for TheMovieDB.org
 gem 'themoviedb', git: 'git://github.com/capncanuck/themoviedb.git'
+
+# Needed for heroku
+gem 'rails_12factor'
+
+# Use puma instead of WEBrick
+gem 'puma'
 
 group :development, :test do
   # Use debugger
