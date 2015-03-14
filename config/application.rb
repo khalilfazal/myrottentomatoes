@@ -29,5 +29,8 @@ module Myrottenpotatoes
     # want to skip the locale validation
     # don't care about locales
     config.i18n.enforce_available_locales = false
+
+    # https://np.reddit.com/r/discworld/comments/2yt9j6/gnu_terry_pratchett/cpcvz46
+    config.action_dispatch.default_headers.merge!('X-Clacks-Overhead' => 'GNU Terry Pratchett')
   end
 end
